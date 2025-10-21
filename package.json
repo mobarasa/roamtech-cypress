@@ -1,0 +1,23 @@
+{
+  "name": "roamtech-cypress",
+  "version": "1.0.0",
+  "description": "roamtech cypress framework",
+  "homepage": "https://github.com/mobarasa/roamtech-cypress#readme",
+  "bugs": {
+    "url": "https://github.com/mobarasa/roamtech-cypress/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobarasa/roamtech-cypress.git"
+  },
+  "license": "ISC",
+  "author": "Mike Barasa",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "cypress": "^15.5.0"
+  }
+}
