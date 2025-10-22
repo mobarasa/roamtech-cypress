@@ -24,9 +24,9 @@ jobs:
 
       - name: Run Cypress Tests (Headless)
         run: npm run test:parallel
-        env:
-          API_TOKEN: ${{ secrets.API_TOKEN }}
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        # env:
+        #   API_TOKEN: ${{ secrets.API_TOKEN }}
+        #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
 
       - name: Merge Mochawesome Reports
         if: always()

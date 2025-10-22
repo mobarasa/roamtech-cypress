@@ -2,9 +2,9 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 
 module.exports = defineConfig({
-  projectId: "fwnu3h",
+  // projectId: "fwnu3h",
   e2e: {
-    baseUrl: process.env.BASE_URL || 'https://staging.yourapp.com',
+    baseUrl: process.env.BASE_URL || 'https://academybugs.com',
 
     // Viewport settings for web and mobile
     viewportWidth: 1280,
