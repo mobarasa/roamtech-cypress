@@ -4,7 +4,7 @@ on:
   push:
     branches: ["main", "develop"]
   pull_request:
-    branches: ["main"]
+    branches: ["main", "develop"]
 
 jobs:
   install:
@@ -17,7 +17,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           runTests: false
-          build: npm run build
 
       - name: Save Build Folder as Artifact
         uses: actions/upload-artifact@v4

@@ -15,7 +15,35 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:edge": "cypress run --browser edge",
+
+    "test": "cypress run",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.js'",
+    "test:functional": "cypress run --spec 'cypress/e2e/functional/**/*.cy.js'",
+    "test:regression": "cypress run --spec 'cypress/e2e/regression/**/*.cy.js'",
+    "test:security": "cypress run --spec 'cypress/e2e/security/**/*.cy.js'",
+    "test:integration": "cypress run --spec 'cypress/e2e/integration/**/*.cy.js'",
+    "test:performance": "cypress run --spec 'cypress/e2e/performance/**/*.cy.js'",
+    "test:mobile": "cypress run --config viewportWidth=375,viewportHeight=667",
+
+    "test:headed": "cypress run --headed",
+    "test:smoke": "cypress run --env grepTags=@smoke",
+    "test:parallel": "cypress run --record --parallel --group 'Parallel Tests'",
+
+    "report:merge": "mochawesome-merge cypress/results/mochawesome/*.json > cypress/results/mochawesome/report.json",
+    "report:generate": "marge cypress/results/mochawesome/report.json -f report -o cypress/results/mochawesome",
+    "report:open": "open cypress/results/mochawesome/report.html",
+
+    "lint": "eslint cypress/**/*.js",
+    "lint:fix": "eslint cypress/**/*.js --fix",
+    "format": "prettier --write 'cypress/**/*.{js,json}'",
+
+    "clean": "rm -rf cypress/results cypress/screenshots cypress/videos",
+    "pretest": "npm run clean"
   },
   "devDependencies": {
     "@faker-js/faker": "^10.1.0",
