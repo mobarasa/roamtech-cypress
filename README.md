@@ -21,14 +21,14 @@ npm install -g ntl
    - Clone the repository containing the Cypress tests to your local machine using Git:
 
      ```bash
-     git clone https://github.com/one-acre-fund/oaf-odoo.git
+     git clone https://github.com/mobarasa/roamtech-cypress.git
      ```
 
 3. ## Navigate to the Project Directory
    - Open a terminal and navigate to the directory where you cloned the repository:
 
      ```bash
-     cd oaf-odoo
+     cd roamtech-cypress
      ```
 
 4. ## Install Dependencies
@@ -48,13 +48,13 @@ npm install -g ntl
    - This should display the installed version of Cypress.
 
 6. ## Configure Login Credentials
-   - Once everything is set up, we need to configure our login credentials which are stored in `cypress.env.example.json`:
+   - Once everything is set up, we need to configure our login credentials which are stored in `.env.example.json`:
 
      ```bash
      npm run setup
      ```
 
-   - This command will copy `cypress.env.example.json` and create a `cypress.env.json` file where you can input your own testing credentials.
+   - This command will copy `env.example.json` and create a `.env.json` file where you can input your own testing credentials.
 
 7. ## Open Cypress Test Runner
    - To open the Cypress Test Runner, run on your CLI:
@@ -75,13 +75,13 @@ npm install -g ntl
 9. ## Run Cypress with Node Task List
    - Instead of using the commands `npx cypress open` or `npx cypress run`, you can simply type `ntl` in the command line interface (CLI) within your project directory. This will launch an interactive interface where you can select any item to execute that task.
 
-   - For example, you can select the `cypress:web` or `cypress:headless` tasks from the list to open the Cypress UI Test Runner or run your Cypress tests via CLI, respectively.
+   - For example, you can select the `cy:run` or `test:api` tasks from the list to open the Cypress UI Test Runner or run your Cypress tests via CLI, respectively.
 
      ```bash
      Node Task List
         ? Select a task to run: (Use arrow keys)
-        ❯ cypress:web
-        cypress:headless
+        ❯ cy:run
+        test:api
      ```
 
 10. ## Run Specific Cypress Test
@@ -91,15 +91,15 @@ npm install -g ntl
 - To run a specific test, use the following command:
 
       ```bash
-      npx cypress run --spec "cypress/e2e/pos/posSetup.cy.js"
+      npx cypress run --spec "cypress/e2e/api/jsonplaceholder.cy.js"
       ```
 
-- Note: Replace `cypress/e2e/pos/posSetup.cy.js` with the actual path to your test file or folder containing the tests you want to run.
+- Note: Replace `cypress/e2e/api/jsonplaceholder.cy.js` with the actual path to your test file or folder containing the tests you want to run.
 
 - You can also run multiple test files by providing a comma-separated list of file paths:
 
       ```bash
-      npx cypress run --spec "cypress/e2e/pos/posSetup.cy.js,cypress/e2e/payments/paymentTests.cy.js"
+      npx cypress run --spec "cypress/e2e/api/jsonplaceholder.cy.js,cypress/e2e/functional/academybugs.cy.js"
       ```
 
 - Alternatively, you can use the `--spec-file` flag to provide a text file containing a list of test file paths:
@@ -111,8 +111,8 @@ npm install -g ntl
 - Where `myTestsToBeExecuted.txt` contains one test file path per line, like:
 
       ```bash
-      cypress/e2e/pos/posSetup.cy.js
-      cypress/e2e/payments/paymentTests.cy.js
+      cypress/e2e/api/jsonplaceholder.cy.js
+      cypress/e2e/functional/academybugs.cy.js
       ```
 
 - By specifying the test files you want to run, you can save time and resources by executing only the relevant tests instead of running the entire test suite.

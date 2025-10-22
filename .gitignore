@@ -1,6 +1,6 @@
 node_modules/
-cypress/results/
-cypress/screenshots/
-cypress/videos/
-cypress/downloads/
+cypress/results/*
+cypress/screenshots/*
+cypress/videos/*
+cypress/downloads/*
 .env
