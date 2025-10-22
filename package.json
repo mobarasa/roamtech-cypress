@@ -1,7 +1,7 @@
 {
   "name": "roamtech-cypress",
   "version": "1.0.0",
-  "description": "roamtech cypress framework",
+  "description": "Cypress testing framework for roamtech applications",
   "homepage": "https://github.com/mobarasa/roamtech-cypress#readme",
   "bugs": {
     "url": "https://github.com/mobarasa/roamtech-cypress/issues"
@@ -18,8 +18,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
     "cypress": "^15.5.0",
     "cypress-multi-reporters": "^2.0.5",
-    "mocha-junit-reporter": "^2.2.1"
+    "dotenv": "^17.2.3",
+    "eslint": "^9.38.0",
+    "eslint-plugin-cypress": "^5.2.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "prettier": "^3.6.2",
+    "start-server-and-test": "^2.1.2"
   }
 }
