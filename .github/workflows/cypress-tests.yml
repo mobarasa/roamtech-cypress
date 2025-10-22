@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Tests (Headless)
-        run: npm run test:parallel
+        run: npm run test:api
         # env:
         #   API_TOKEN: ${{ secrets.API_TOKEN }}
         #   CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
