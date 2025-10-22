@@ -32,11 +32,24 @@ jobs:
         if: always()
         run: |
           mkdir -p cypress/results/mochawesome
-          npm run report:merge
+          # Check if any JSON reports exist before merging
+          if [ -n "$(find cypress/results/mochawesome -name '*.json' -not -name 'report.json' 2>/dev/null)" ]; then
+            npm run report:merge
+          else
+            echo "No mochawesome JSON reports found to merge"
+            exit 0
+          fi
 
       - name: Generate HTML Report
         if: always()
-        run: npm run report:generate
+        run: |
+          # Only generate HTML report if merged report exists
+          if [ -f cypress/results/mochawesome/report.json ]; then
+            npm run report:generate
+          else
+            echo "No merged report found, skipping HTML generation"
+            exit 0
+          fi
 
       - name: Upload Cypress Artifacts
         if: always()
@@ -52,4 +65,8 @@ jobs:
         if: always()
         run: |
           echo "✅ Cypress Tests Completed"
-          echo "📁 Reports: cypress/results/mochawesome/report.html"
+          if [ -f cypress/results/mochawesome/report.html ]; then
+            echo "📊 Reports: cypress/results/mochawesome/report.html"
+          else
+            echo "⚠️  No HTML report generated"
+          fi
