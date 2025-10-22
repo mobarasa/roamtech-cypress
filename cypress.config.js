@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 require('dotenv').config();
 
 module.exports = defineConfig({
+  projectId: "fwnu3h",
   e2e: {
     baseUrl: process.env.BASE_URL || 'https://staging.yourapp.com',
 
